@@ -7,7 +7,6 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -23,3 +22,19 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+    - name: GoReleaser Action
+      # You may pin to the exact commit or the version.
+      # uses: goreleaser/goreleaser-action@68acf3b1adf004ac9c2f0a4259e85c5f66e99bef
+      uses: goreleaser/goreleaser-action@v3.0.0
+      with:
+        # GoReleaser Distribution (goreleaser or goreleaser-pro)
+        distribution: # optional, default is goreleaser
+        # GoReleaser version
+        version: # optional, default is latest
+        # Arguments to pass to GoReleaser
+        args: release --snapshot --rm-dist 
+        # Working directory (below repository root)
+        workdir: # optional, default is .
+        # Just install GoReleaser
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
