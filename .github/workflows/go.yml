@@ -35,6 +35,5 @@ jobs:
         args: release --snapshot --rm-dist 
         # Working directory (below repository root)
         workdir: # optional, default is .
-        # Just install GoReleaser
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
