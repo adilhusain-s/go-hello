@@ -1,13 +1,14 @@
-# This is an example .goreleaser.yml file with some sensible defaults.
-# Make sure to check the documentation at https://goreleaser.com
+project_name: go-hello
 before:
+  # https://goreleaser.com/customization/hooks/
   hooks:
-    # You may remove this if you don't use go modules.
+    # tidy up
     - go mod tidy
-    # you may remove this if you don't need go generate
-    - go generate ./...
 builds:
-  - env:
+  # https://goreleaser.com/customization/build/
+  - main: .
+    binary: go-hello
+    env:
       - CGO_ENABLED=0
     goos:
       - linux
