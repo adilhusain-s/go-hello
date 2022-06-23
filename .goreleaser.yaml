@@ -6,7 +6,7 @@ before:
     - go mod tidy
 builds:
   # https://goreleaser.com/customization/build/
-  - main: .
+  - main: ./go-hello
     binary: go-hello
     env:
       - CGO_ENABLED=0
