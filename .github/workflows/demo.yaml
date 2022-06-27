@@ -27,6 +27,8 @@ jobs:
       - name: List files in the repository
         run: |
           docker pull busybox  --platform ppc64le
-          docker run --rm busybox uname -a
+          docker run --rm busybox sh 
+          arch 
+          uname -a 
           echo "🍏 This job's status is ${{ job.status }}."
         shell: bash
