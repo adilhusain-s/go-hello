@@ -25,7 +25,9 @@ jobs:
           go-version: 1.18
 
       - name: List files in the repository
-      - run arch
-      - run uname -a
-      - run go version
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+        run: |
+          arch
+          uname -a
+          go version
+          echo "🍏 This job's status is ${{ job.status }}."
+        shell: bash
