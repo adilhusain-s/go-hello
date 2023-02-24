@@ -19,8 +19,9 @@ func (n *Name) addLastName(lastName string) {
 }
 
 func main() {
-
-	var MyName = Name{first: "adil", last: "shaikh"}
+	var MyName Name
+	MyName.addFirstName("adil")
+	MyName.addLastName("shaikh")
 	fmt.Println(MyName.first, MyName.last)
 	fmt.Println(runtime.GOOS, runtime.GOARCH)
 
