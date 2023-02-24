@@ -1,28 +1,24 @@
 package main
 
-import (
-	"fmt"
-	"runtime"
-)
+import "fmt"
 
-type Name struct {
-	first string
-	last  string
+func zeroval(ival int) {
+	ival = 0
 }
 
-func (n *Name) addFirstName(firstName string) {
-	n.first = firstName
-}
-
-func (n *Name) addLastName(lastName string) {
-	n.last = lastName
+func zeroptr(iptr *int) {
+	*iptr = 0
 }
 
 func main() {
-	var MyName Name
-	MyName.addFirstName("adil")
-	MyName.addLastName("shaikh")
-	fmt.Println(MyName.first, MyName.last)
-	fmt.Println(runtime.GOOS, runtime.GOARCH)
+	i := 1
+	fmt.Println("initial:", i)
 
+	zeroval(i)
+	fmt.Println("zeroval:", i)
+
+	zeroptr(&i)
+	fmt.Println("zeroptr:", i)
+
+	fmt.Println("pointer:", &i)
 }
